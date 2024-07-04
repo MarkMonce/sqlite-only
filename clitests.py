@@ -112,9 +112,11 @@ def listcustomers():
     column_names = [description[0] for description in cursor.description]
     customer_list = [dict(zip(column_names, row)) for row in rows]
     
-    # Close the connection
+    print("{:<12} {:<20} {:<20} {:<18} {:<10}".format("Customer ID", "First Name", "Last Name", "Age", "Account Balance"))
+    print("-" * 80)
     for customer in customer_list:
-        print(customer)
+        print("{:<12} {:<20} {:<20} {:<18} {:<10}".format(customer['id'], customer['firstname'], customer['lastname'], customer['age'], customer['accountbalance']))
+
 
     return 
 
@@ -128,10 +130,10 @@ def listproducts():
     column_names = [description[0] for description in cursor.description]
     product_list = [dict(zip(column_names, row)) for row in rows]
     
+    print("{:<12} {:<20} {:<18} {:<10}".format("Product ID", "Product Name", "Quantity in Stock", "Price"))
+    print("-" * 62)
     for product in product_list:
-            print(product)
-
-
+        print("{:<12} {:<20} {:<18} {:<10}".format(product['id'], product['productname'], product['quantityinstock'], product['price']))
     return 
 
 ####### Get basic customer info while processing a transaction     #######################################################################
