@@ -13,6 +13,7 @@
 ##
 
 import sqlite3
+import os
 
 conn = sqlite3.connect('testdb.db')
 cursor = conn.cursor()
@@ -237,6 +238,22 @@ while option != "q":
     elif option == 'b':
         customer_id = input('Input Customer ID for balance: ')
         getcustomerbalance(customer_id)
+    
+    elif option == 'c':
+        # Clear the console
+        os.system('cls' if os.name == 'nt' else 'clear')
+        # Print the options
+        print('Select DB Action:')
+        print('1: Add Customer')
+        print('2: Add Product')
+        print('3: Add Order')
+        print('4: List Customers')
+        print('5: List Products')
+        print('b: Get Customer Balance')
+        print('c: Clear Console and Show Options')
+        # Prompt for input again
+        option = input("Next Option? (q to Quit)")
+    
     else:
 
         option = input("This Option Is Not Available at this Time. Please Make a Valid Selection or q to quit: ")
