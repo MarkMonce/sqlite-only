@@ -1,6 +1,6 @@
 ################################################################################
 #
-#This is a python script to allow basic R/W functions to the test database
+# This is a python script to allow basic R/W functions to the test database
 # Date Created: 7/3/24
 # By Mark Monce
 # See readme.txt in Git Repo for the core function descriptions
@@ -12,7 +12,6 @@
 #   Files to recreate the necessary DB structures
 ##
 
-##
 import sqlite3
 
 conn = sqlite3.connect('testdb.db')
@@ -23,7 +22,6 @@ cursor = conn.cursor()
 # Function Definitions to write to and read from the tables.
 #
 ###################################################
-
 
 ##################     ADD PERSON FUNCTION          #######################################################################
 
@@ -178,10 +176,6 @@ def getcustomerbalance(id):
     mycursor.execute("SELECT accountbalance FROM person WHERE id =?", (id,))
     balance = mycursor.fetchone()[0]
     return balance
-
-
-
-
 
 
 ###################################################
