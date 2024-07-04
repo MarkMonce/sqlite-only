@@ -20,7 +20,7 @@ cursor = conn.cursor()
 
 #################################################
 #
-# Function Definitions to write to and read from the tables
+# Function Definitions to write to and read from the tables.
 #
 ###################################################
 
